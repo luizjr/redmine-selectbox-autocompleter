@@ -2,11 +2,11 @@ require 'redmine'
 
 Redmine::Plugin.register :selectbox_autocompleter do
   name 'Selectbox Autocompleter plugin'
-  author 'heriet'
+  author 'Luiz Silva'
   description 'This plugin generate Autocomplete box for Select box'
-  version '1.2.１'
-  url 'https://github.com/heriet/redmine-selectbox-autocompleter'
-  author_url 'http://heriet.info'
+  version '1.2.0'
+  url 'https://github.com/luizjr/redmine-selectbox-autocompleter'
+  author_url 'https://luizjr.dev'
 
   settings(:default => {
     'target_list' => [
@@ -21,9 +21,9 @@ Redmine::Plugin.register :selectbox_autocompleter do
 
 end
 
-ActionDispatch::Callbacks.to_prepare do
+ActiveSupport.on_load(:action_view) do
   require File.expand_path('../app/helpers/selectbox_autocompleter_helper', __FILE__)
   ActionView::Base.send :include, SelectboxAutocompleterHelper
 end
 
-require_dependency 'selectbox_autocompleter/hooks'
+require File.dirname(__FILE__) + '/lib/selectbox_autocompleter/hooks'

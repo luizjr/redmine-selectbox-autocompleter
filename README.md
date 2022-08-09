@@ -10,7 +10,7 @@ For example, it is useful for assisting input of a select box containing many op
 
 ```
 $ cd $(REDMINE_HOME)/plugin
-$ git clone https://github.com/heriet/redmine-selectbox-autocompleter.git selectbox_autocompleter
+$ git clone https://github.com/luizjr/redmine-selectbox-autocompleter.git selectbox_autocompleter
 ```
 
 and restart your redmine.
